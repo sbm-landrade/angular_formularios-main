@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "gatibook"
+  "defaultProject": "gatibook",
+  "cli": {
+    "analytics": "1af64439-82ef-48e4-a8df-8b1dba2892c8"
+  }
 }
