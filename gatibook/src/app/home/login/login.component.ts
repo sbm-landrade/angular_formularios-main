@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { error, log } from 'console';
 import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
 
 @Component({
@@ -16,13 +15,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    this.authService.autenticar(this.usuario,this.senha).subscribe(() => {
+    this.authService.autenticar(this.usuario,this.senha).subscribe(
+      () => {
       console.log('Autenticado com sucesso');
-    },(error) => {
+    },
+    (error) => {
       alert("Usuario ou senha inválido");
       console.log(error);
 
     }
-    )
+    );
   }
 }
