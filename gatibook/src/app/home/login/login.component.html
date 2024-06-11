@@ -23,7 +23,10 @@
     placeholder="Senha"
     [(ngModel)]="senha"
     name="senha"
+    #campoSenha="ngModel"
+    required
     />
+    <app-mensagem *ngIf="campoSenha.invalid" mensagem="Senha obrigatória" ></app-mensagem>
   </div>
 
   <button type="submit" class="btn btn-primary btn-block">Login</button>
