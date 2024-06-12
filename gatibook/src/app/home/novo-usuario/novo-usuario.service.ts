@@ -7,9 +7,9 @@ import { NovoUsuario } from './novo-usuario';
 })
 export class NovoUsuarioService {
 
-  constructor(private HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   cadastraNovoUsuario(novoUsuario: NovoUsuario) {
-    return this.HttpClient.post('http://localhost:3000/user/signup', novoUsuario);
+    return this.http.post('http://localhost:3000/user/signup', novoUsuario);
   }
 }
