@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NovoUsuario } from './novo-usuario';
 import { minusculoValidator } from './minisculo.validator';
-
+import { usuarioSenhaIguaisValidator } from './usuario-senha-iguais.validator';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class NovoUsuarioComponent implements OnInit {
       password: [''],
       },
       {
-
+        validators: [usuarioSenhaIguaisValidator],
       }
     );
   }
