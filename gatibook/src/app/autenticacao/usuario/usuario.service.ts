@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-
   private usuarioSubject = new BehaviorSubject<Usuario>({});
 
   constructor(private tokenService: TokenService) { }
@@ -17,7 +16,7 @@ export class UsuarioService {
     const token = this.tokenService.retornaToken();
     const usuario = jwt_decode(token) as Usuario;
     this.usuarioSubject.next(usuario);
-  }  
+  }
   retornaUsuario() {
     return this.usuarioSubject.asObservable();
   }
@@ -31,6 +30,6 @@ export class UsuarioService {
   }
 
   estaLogado() {
-    return this.tokenService.possuiToken
+    return this.tokenService.possuiToken();
   }
 }
